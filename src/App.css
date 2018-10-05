@@ -1,32 +1,290 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css?family=Comfortaa:300,400,700");
+@import url("https://fonts.googleapis.com/css?family=Raleway");
+
+body {
+  box-sizing: border-box;
+  background-color: #eee;
+  font-family: "Comfortaa", sans-serif;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
+.bold {
+  font-weight: 700;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* ----------------------------
+          HEADER
+----------------------------*/
+.masthead {
+  display: flex;
+  box-sizing: border-box;
+  justify-content: space-between;
+  padding: 0px 20px 0px 40px;
+  min-height: 50px;
+  background-color: #fff;
+  color: #a1b4ba;
+  border-bottom: #ddd 1px solid;
+}
+
+.site-branding {
+  display: flex;
+  align-items: center;
+  font-size: 1.3em;
+  padding: 0;
+  margin: 0;
+  transition: all 0.4s ease-in-out;
+}
+
+.site-branding:hover {
+  color: #5184f3;
+}
+
+.fa-user {
+  font-size: 1.2em;
+}
+
+.fa-bandcamp {
+  margin: 0 6px 2px 0;
+  font-size: 2rem;
+  color: #5184f3;
+  transition: all 0.3s ease-in-out;
+}
+
+.fa-bandcamp:hover {
+  transform: scale(1.2);
+}
+
+/* Navigation */
+.nav-container {
+  display: flex;
+  list-style: none;
+}
+
+.nav-item {
+  box-sizing: border-box;
+}
+
+.nav-container a {
+  color: #a1b4ba;
+  text-decoration: none;
+  text-transform: capitalize;
+  font-weight: lighter;
+  font-size: 0.8rem;
+  padding: 7px 15px;
+  /* border-radius: 6px; */
+  /* border-top-left-radius: 0px; */
+  /* border-bottom: 2px transparent solid; */
+  /* border-right: 2px transparent solid; */
+  transition: all 0.3s ease-in-out;
+}
+
+.nav-container a:hover,
+.nav-container a:hover {
+  /* background-color: #a1b4ba; */
+  color: #5184f3;
+  /* border-bottom: 2px #5184f3 solid; */
+  font-weight: 700;
+  /* border-bottom: 2px #a1b4ba solid; */
+  /* border-right: 2px #a1b4ba solid; */
+}
+
+/* ----------------------------
+      JOB LIST CONTAINER
+----------------------------*/
+.job-list-container {
+  padding: 20px 0 100px 0;
+  margin: 0 auto;
+  max-width: 80%;
+}
+
+.job-list {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin: 20px;
 }
 
-.App-link {
-  color: #61dafb;
+.job-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: white;
+  color: #5184f3;
+  padding: 0;
+  text-align: left;
+  height: 100%;
+  min-width: 80%;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  transform: translateY(0);
+  transition: all 0.2s ease-in-out;
+  border-top-right-radius: 8px;
+  border-top-left-radius: 8px;
+  border-radius: 8px;
+  overflow: hidden;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.job-item:not(:first-child) {
+  margin-top: 2em;
+}
+
+.job-item:hover {
+  box-shadow: 0px 15px 25px 0px rgba(0, 0, 0, 0.2);
+  transform: translateY(-3px);
+}
+
+.job-branding {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  max-width: 100%;
+  max-height: 10em;
+  position: relative;
+  background-color: #0a214e;
+  overflow: hidden;
+}
+
+.job-branding .job-branding-logo {
+  display: flex;
+  justify-content: flex-start;
+  align-content: center;
+  align-items: center;
+  flex-basis: 1;
+  position: absolute;
+  left: 0;
+  height: 100%;
+  width: auto;
+  margin-left: auto;
+  margin-right: auto;
+  opacity: 1;
+  background-color: transparent;
+  padding-left: 2em;
+}
+
+.job-branding .job-branding-logo img {
+  width: auto;
+  height: 70%;
+  opacity: 1;
+  background-color: transparent;
+  filter: drop-shadow(0px 5px 15px rgba(179, 207, 248, 0.76));
+}
+
+.job-branding .job-item-image {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+.job-branding .job-item-image img {
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.2));
+  overflow: hidden;
+  width: 100%;
+  height: auto;
+  display: block;
+  position: relative;
+  top: 20%;
+}
+
+.job-item-info {
+  padding: 20px 40px 10px 30px;
+  border: 1px solid #5184f381;
+  border-bottom: 1px solid #5184f334;
+  border-top: none;
+}
+
+.job-item-image {
+  width: 20%;
+}
+
+.job-item-image img {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+}
+
+.job-item .job-title {
+  font-size: 1.4rem;
+  line-height: 0.7rem;
+  color: #274fa5;
+}
+
+.job-item .job-company {
+  font-size: 0.9rem;
+  color: rgba(2, 33, 66, 0.5);
+}
+
+.job-item .job-description {
+  font-family: "Raleway", sans-serif;
+  font-size: 0.9rem;
+  color: rgba(1, 39, 80, 0.8);
+  line-height: 1.4rem;
+}
+
+.job-item .job-dates {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+  border-left: 1px solid #d9dadc62;
+  position: absolute;
+  margin-right: 1em;
+  padding-bottom: 10px;
+}
+
+.job-item .job-dates p {
+  font-family: "Raleway", sans-seriaf;
+  font-size: 0.7rem;
+  color: rgba(255, 255, 255, 0.541);
+  line-height: 1.1rem;
+  /* padding-bottom: 10px; */
+  margin: 0;
+  text-align: right;
+  white-space: nowrap;
+  padding: 0 20px;
+  transform: scale(1);
+  transition: all 0.3s ease-in-out;
+}
+
+.job-item .job-dates p.job-deadline {
+  color: #ff4151bd;
+}
+
+.job-links {
+  display: flex;
+  justify-content: space-evenly;
+  align-content: center;
+  align-items: center;
+  border: 1px solid #5184f381;
+  border-top: none;
+  border-bottom-right-radius: 9px;
+  border-bottom-left-radius: 9px;
+}
+
+.job-item .job-dates p:hover {
+  transform: scale(1.2);
+}
+
+.job-links a {
+  padding: 15px 0;
+  width: 100%;
+  text-decoration: none;
+  text-transform: uppercase;
+  text-align: center;
+  color: #274fa5;
+  font-size: 0.8rem;
+  font-weight: 700;
+  transition: all 0.5s ease-in-out;
+}
+
+.job-links .job-read-more {
+  border-right: 1px solid #5184f334;
+}
+
+.job-links .job-read-more:hover {
+  background-color: #274fa5;
+  color: #fff;
+}
+
+.job-links .job-apply:hover {
+  background-color: #44af5c;
+  color: #fff;
 }
